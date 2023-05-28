@@ -1,0 +1,7 @@
+version: '1'
+services:
+  web:
+    ports:
+      - '8000:8000'
+    restart: always
+    image: ghcr.io/oromishh/ci_cd_3/web:latest
