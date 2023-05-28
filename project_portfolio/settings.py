@@ -3,6 +3,8 @@ import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_STATIC_DIR = os.path.join(BASE_DIR, 'Portfolio')
+TEMPATE_DIR = os.path.join(BASE_STATIC_DIR, 'templates')
 
 
 # Quick-start development settings - unsuitable for production
@@ -43,7 +45,7 @@ ROOT_URLCONF = 'project_portfolio.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'static_content/templates']
+        'DIRS': [TEMPATE_DIR]
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -90,6 +92,12 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
+STATIC_URL = '/assets/'
+STATICFILES_DIRS = [
+    BASE_STATIC_DIR + '/assets',
+]
+
 
 
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'photos/')
